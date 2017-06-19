@@ -1,0 +1,20 @@
+extends ../partials/mainLayout
+block content
+  .container
+    .card-panel.grey.lighten-2.hoverable
+      h4 Datos al hacer el login con la api de Google
+      .card-content
+        .row
+          .col.s6
+            img(src= img)
+          .col.s6
+            p ID:
+              span= user.google.id
+            p Nombre: 
+              span=user.google.name
+            p Correo:
+              span= user.google.email
+				
+				
+        
+            
