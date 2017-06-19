@@ -1,11 +1,11 @@
-var GoogleStrategy 		= require('passport-google-oauth').OAuth2Strategy;
-var configAuth 				= require('../auth');
-var User            	= require('../../app/models/user');
+var GoogleStrategy 	= require('passport-google-oauth').OAuth2Strategy;
+var configAuth 			= require('../auth');
+var User            = require('../../app/models/user');
 
 module.exports = new GoogleStrategy({
-		clientID: configAuth.googleAuth.clientID,
+		clientID		: configAuth.googleAuth.clientID,
 		clientSecret: configAuth.googleAuth.clientSecret,
-		callbackURL: configAuth.googleAuth.callbackURL
+		callbackURL	: configAuth.googleAuth.callbackURL
 	},
 	function(accessToken, refreshToken, profile, done) {
 		console.log(profile);
@@ -27,7 +27,6 @@ module.exports = new GoogleStrategy({
 								throw err;
 							return done(null, newUser);
 						})
-						console.log(profile);
 					}
 				});
 			});

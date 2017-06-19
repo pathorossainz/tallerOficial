@@ -1,7 +1,6 @@
-var express = require('express')
-var router = express.Router()
-var passport = require('passport')
-var mongoose = require('mongoose');
+var express 	= require('express')
+var router 		= express.Router()
+var passport 	= require('passport')
 
 module.exports = function(app){
 	app.use('/', router);
@@ -18,16 +17,13 @@ router.get('/logout', function(req, res){
 	});
 
 router.get('/profile', isLoggedIn, function(req, res) {
-	var newSize="300"
-	var str = req.user.google.img;
-	var img = str.split("?sz=50")[0]+"?sz="+newSize;
-	res.render('ricardo/google', { user: req.user, img:img });
+	var newImgsz = req.user.google.img.split("?sz=50")[0]+"?sz="+300;
+	res.render('ricardo/google', { user: req.user, img:newImgsz });
 });
 
 function isLoggedIn(req, res, next) {
 	if(req.isAuthenticated()){
 		return next();
 	}
-
 	res.redirect('/');
 }

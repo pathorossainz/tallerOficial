@@ -1,7 +1,5 @@
-var express = require('express')
-var router = express.Router()
-var passport = require('passport')
-var mongoose = require('mongoose');
+var express 	= require('express')
+var router 		= express.Router()
 
 module.exports = function(app){
 	app.use('/esteban', router);
