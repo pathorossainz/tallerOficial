@@ -1,0 +1,30 @@
+-1.- Start mongo service
+0.- git clone repo
+1.- Google console get credentials
+2.- Add credentials to auth.js file
+3.- Setup google strategy
+3.- Create Controller with their name
+4.- Add routes in controller
+5.- Add folder with their name && create index file
+6.- Change route in view
+
+
+
+
+if(err)
+	return done(err);
+if(user)
+	return done(null, user);
+else {
+	var newUser = new User();
+	newUser.google.id = profile.id;
+	newUser.google.token = accessToken;
+	newUser.google.name = profile.displayName;
+	newUser.google.email = profile.emails[0].value;
+	newUser.google.img = profile.photos[0].value;
+	newUser.save(function(err){
+		if(err)
+			throw err;
+		return done(null, newUser);
+	})
+}
