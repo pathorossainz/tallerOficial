@@ -1,6 +1,22 @@
 extends ../partials/mainLayout
 block content
   .container
-    .card-panel.blue.lighten-4.hoverable      
-      img.devsite-product-logo(src='img/maps.png', alt='Google Maps API')    
-      .card-content
+    .card-panel.grey.hoverable      
+      img.devsite-product-logo(src='img/maps.png', alt='Google Maps API')
+      .row  
+        .col.s6
+          .card.blue-grey.darken-1     
+            #googleMap01(style='width:100%;height:400px;').card-content.black-text                  
+            .card-action
+              h4 Ejemplo 1 - Basico
+        .col.s6
+          .card.blue-grey.darken-1
+            #googleMap02(style='width:100%;height:400px;').card-content.black-text            
+            .card-action
+              h4 Ejemplo 2 - Marca
+      .row
+        .card.blue-grey.darken-1        
+          #googleMap03(style='width:100%;height:600px;').card-content.black-text                  
+          .card-action
+            h4 Ejemplo 3 - Multiples Marcas
+      
