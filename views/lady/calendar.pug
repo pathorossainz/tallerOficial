@@ -1,0 +1,26 @@
+extends ../partials/mainLayout
+block content
+	.container
+		.card-panel.grey.lighten-2.hoverable
+			h4 Datos Google Calendar Eventos
+			.card-content
+				p Correo Electronico:
+					span= user.summary
+				mixin user-card(dat)
+					.card-panel.pink.lighten-5.hoverable
+						div.user-card
+							p Fecha de Evento
+								li
+									span= dat.start.dateTime
+
+							p Datos de quien creo
+								li
+									span= dat.creator.email
+								li
+									span= dat.creator.displayName
+							p Nombre del Evento
+								li
+									span= dat.summary
+				for dat in user.items
+					+user-card(dat)
+

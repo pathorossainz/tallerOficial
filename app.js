@@ -9,7 +9,6 @@ var flash 				= require('connect-flash');
 var glob 					= require('glob');
 var MongoStore 		= require('connect-mongo')(session);
 var config 				= require('./config/config.js');
-
 var app 					= express();
 
 mongoose.connect(config.db);

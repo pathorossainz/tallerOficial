@@ -1,6 +1,10 @@
 extends ../partials/mainLayout
 block content
-  .container.col.s12
-    .card-panel.pink.hoverable
-      h4.white-text Sección de Lady
+  .container
+    .card-panel.grey.lighten-2.hoverable
+      h4 Google Calendar
       .card-content
+        .card-panel.center
+          h4 Permisos de Api Calendar
+          a(href='/lady/auth/calendar').waves-effect.waves-light.btn-large.blue
+            i.fa.fa-calendar-check-o(aria-hidden='true')
