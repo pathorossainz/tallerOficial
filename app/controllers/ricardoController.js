@@ -13,14 +13,14 @@ router.get('/', function (req, res){
 });
 
 router.get('/auth/google',
-	passport.authenticate('google',
+	passport.authenticate('google-a',
 	{
 		scope: ['profile', 'email']
 	})
 );
 
 router.get('/auth/google/callback',
-	passport.authenticate('google',
+	passport.authenticate('google-a',
 	{
 		successRedirect: '/profile',
 		failureRedirect: '/'

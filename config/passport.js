@@ -1,5 +1,6 @@
 var User            	= require('../app/models/user');
 var googleAuth 				= require('./passport/google.js')
+var GoogleCalendar 				= require('./passport/calendar.js')
 
 module.exports = function(passport) {
 	passport.serializeUser(function(user, done){ done(null, user.id); });
@@ -8,5 +9,6 @@ module.exports = function(passport) {
 			done(err, user);
 		});
 	});
-	passport.use(googleAuth);
+	passport.use('google-a',googleAuth);
+	passport.use('google-c',GoogleCalendar);
  };
